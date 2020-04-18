@@ -1,0 +1,52 @@
+.svg{
+    border: 2px solid black;
+    height: 200px;
+    width: 200px;
+}
+
+.square{
+    margin: 7px;
+    width: 30px;
+    height: 30px;
+    background-color: coral;
+    animation-name: x;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    position: relative;
+}
+
+@keyframes x{
+    0%{
+        background-color: coral;
+        left: 0px;
+    }
+    25%{
+        background-color: cornflowerblue;
+        height: 15px;
+        width: 15px;
+        left: 160px;
+        top: 0px;
+    }
+    50%{
+        background-color: rgb(201, 31, 96);
+        height: 30px;
+        width: 30px;
+        left: 0px;
+        top: 155px;
+    }
+    75%{
+        background-color: rgb(31, 201, 144);
+        height: 30px;
+        width: 30px;
+        left: 155px;
+        top: 155px;
+    }
+    100%{
+        background-color: coral;
+        height: 30px;
+        width: 30px;
+        left: 0px;
+        top: 0px;
+    }
+
+}
