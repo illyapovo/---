@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pool table</title>
+</head>
+<body>
+	<svg height="600" width="350">
+		
+				<!-- main table --> 
+		<rect height="350" width="202" fill="Forestgreen" x="73" y="50" stroke="lightgray" stroke-width="10"></rect>
+		
+				<!-- round pockets -->
+		<circle cx="82" cy="57" r="12" fill="black"></circle>
+		<circle cx="268" cy="57" r="12" fill="black"></circle>
+		<circle cx="82" cy="392" r="12" fill="black"></circle>
+		<circle cx="82" cy="225" r="12" fill="black"></circle>
+		<circle cx="268" cy="225" r="12" fill="black"></circle>
+		<circle cx="268" cy="392" r="12" fill="black"></circle>
+		
+				<!-- balls -->
+		<!-- white-ball -->
+		<circle cx="180" cy="300" r="8" fill="white" id="white-ball">	
+		</circle>
+		<!-- blue-ball -->
+		<circle cx="180" cy="230" r="8" fill="blue" id="blue-ball">
+		</circle>
+		<!-- red-ball -->
+		<circle cx="162" cy="230" r="8" fill="darkred" id="red-ball">
+		</circle>
+		<!-- gold-ball -->
+		<circle cx="198" cy="230" r="8" fill="gold" id="gold-ball">
+		</circle>
+		<!-- violet-ball -->
+		<circle cx="172" cy="215" r="8" fill="violet" id="violet-ball">
+		</circle>
+		<!-- gray-ball -->
+		<circle cx="190" cy="215" r="8" fill="gray" id="gray-ball">
+		</circle> 
+		<!-- green-ball -->
+		<circle cx="181" cy="200" r="8" fill="lawngreen" id="green-ball">
+		</circle>   
+		
+				<!-- frame for a table -->
+		<rect x="74" y="50" height="350" width="202" stroke="darkslategray" stroke-width="12" fill="none"></rect>
+
+				<!-- billiard cue -->
+		<rect x="175" y="350" width="10" height="200" fill="brown" id="cue">
+		</rect>
+		
+		<!-- billiard cue animation -->
+		<animate xlink:href="#cue"
+					 attributeName="y"
+					 from="350" to="300"
+					 dur="1s"
+					 begin="click"
+					 id="cueAnim"/>
+		
+		<!-- white ball animation -->
+		<animate xlink:href="#white-ball"
+					 attributeName="cy"
+					 from="300" to="200"
+					 dur="1s"
+					 begin="cueAnim.end"
+					 id="whiteAnim"
+					 fill="freeze"/>
+		
+		<!-- green ball animation -->
+		<animate xlink:href="#green-ball"
+					 attributeName="cy"
+					 from="200" to="60"
+					 dur="1s"
+					 begin="whiteAnim.end"
+					 id="greenAnim1"
+					 fill="freeze"/>
+		<animate xlink:href="#green-ball"
+					 attributeName="cx"
+					 from="181" to="265"
+					 dur="1s"
+					 begin="whiteAnim.end"
+					 id="greenAnim2"
+					 fill="freeze"/>
+		<animate xlink:href="#green-ball"
+					 attributeName="opacity"
+					 values="1;0"
+					 dur="0.5s"
+					 begin="greenAnim1.end-0.2s"
+					 fill="freeze"
+					 id="x1"/>
+		<!-- write your svg code here to animate other balls -->
+		<animate xlink:href="#cue"
+					 attributeName="y"
+					 from="-50" to="10"
+					 dur="1s"
+					 begin="x1.end"
+					 id="x2"
+					 fill="freeze"/>
+		
+		<!-- white ball animation -->
+		<animate xlink:href="#white-ball"
+					 attributeName="cy"
+					 from="200" to="230"
+					 dur="1s"
+					 begin="x2.end"
+					 id="x3"
+					 fill="freeze"/>
+					 <animate xlink:href="#white-ball"
+					 attributeName="cx"
+					 from="180" to="198"
+					 dur="1s"
+					 begin="x2.end"
+					 id="x3"
+					 fill="freeze"/>
+		
+		<!-- gold ball animation -->
+		<animate xlink:href="#gold-ball"
+					 attributeName="cy"
+					 from="230" to="392"
+					 dur="1s"
+					 begin="x3.end"
+					 id="x4"
+					 fill="freeze"/>
+		<animate xlink:href="#gold-ball"
+					 attributeName="cx"
+					 from="198" to="268"
+					 dur="1s"
+					 begin="x3.end"
+					 id="x4"
+					 fill="freeze"/>
+		<animate xlink:href="#gold-ball"
+					 attributeName="opacity"
+					 values="1;0"
+					 dur="0.5s"
+					 begin="x4.end-0.2s"
+					 fill="freeze"
+					 id="x5"/>
+					 <!--GRAY-->
+					 <animate xlink:href="#cue"
+					 attributeName="y"
+					 from="392" to="230"
+					 dur="1s"
+					 begin="x5.end"
+					 id="x6"
+					 fill="freeze"/>
+					 <animate xlink:href="#cue"
+					 attributeName="x"
+					 from="200" to="190"
+					 dur="0.5s"
+					 begin="x5.end"
+					 id="x6"
+					 fill="freeze"/>
+		
+		<!-- white ball animation -->
+		<animate xlink:href="#white-ball"
+					 attributeName="cy"
+					 from="230" to="215"
+					 dur="0.4s"
+					 begin="x6.end"
+					 id="x7"
+					 fill="freeze"/>
+					 <animate xlink:href="#white-ball"
+					 attributeName="cx"
+					 from="198" to="190"
+					 dur="0.4s"
+					 begin="x6.end"
+					 id="x7"
+					 fill="freeze"/>
+		
+		<!-- gray ball animation -->
+		<animate xlink:href="#gray-ball"
+					 attributeName="cy"
+					 from="215" to="57"
+					 dur="1s"
+					 begin="x7.end"
+					 id="x8"
+					 fill="freeze"/>
+		<animate xlink:href="#gray-ball"
+					 attributeName="cx"
+					 from="190" to="82"
+					 dur="1s"
+					 begin="x7.end"
+					 id="x8"
+					 fill="freeze"/>
+		<animate xlink:href="#gray-ball"
+					 attributeName="opacity"
+					 values="1;0"
+					 dur="0.1s"
+					 begin="x8.end-0.2s"
+					 fill="freeze"
+					 id="x9"/>
+					 		 <!--all-->
+							  <animate xlink:href="#cue"
+							  attributeName="y"
+							  from="-50" to="10"
+							  dur="0.6s"
+							  begin="x9.end"
+							  id="x10"
+							  fill="freeze"/>
+							  <animate xlink:href="#cue"
+							  attributeName="x"
+							  from="198" to="190"
+							  dur="0.5s"
+							  begin="x9.end"
+							  id="x10"
+							  fill="freeze"/>
+				 
+				 <!-- white ball animation -->
+				 <animate xlink:href="#white-ball"
+							  attributeName="cy"
+							  from="215" to="225"
+							  dur="0.2s"
+							  begin="x10.end"
+							  id="x11"
+							  fill="freeze"/>
+							  <animate xlink:href="#white-ball"
+							  attributeName="cx"
+							  from="198" to="172"
+							  dur="0.2s"
+							  begin="x10.end"
+							  id="x11"
+							  fill="freeze"/>
+				 
+				 <!-- red ball animation -->
+				 <animate xlink:href="#red-ball"
+							  attributeName="cy"
+							  from="230" to="392"
+							  dur="1s"
+							  begin="x11.end"
+							  id="x12"
+							  fill="freeze"/>
+				 <animate xlink:href="#red-ball"
+							  attributeName="cx"
+							  from="162" to="82"
+							  dur="1s"
+							  begin="x11.end"
+							  id="x12"
+							  fill="freeze"/>
+				 <animate xlink:href="#red-ball"
+							  attributeName="opacity"
+							  values="1;0"
+							  dur="0.1s"
+							  begin="x12.end-0.2s"
+							  fill="freeze"
+							  id="x13"/>
+							  <!-- blue ball animation -->
+				 <animate xlink:href="#blue-ball"
+				 attributeName="cy"
+				 from="230" to="392"
+				 dur="1s"
+				 begin="x11.end-0.1s"
+				 id="x12"
+				 fill="freeze"/>
+	<animate xlink:href="#blue-ball"
+				 attributeName="cx"
+				 from="180" to="268"
+				 dur="1s"
+				 begin="x11.end-0.1s"
+				 id="x12"
+				 fill="freeze"/>
+	<animate xlink:href="#blue-ball"
+				 attributeName="opacity"
+				 values="1;0"
+				 dur="0.1s"
+				 begin="x12.end-0.2s"
+				 fill="freeze"
+				 id="x13"/>
+				 <!-- violet ball animation -->
+		<animate xlink:href="#violet-ball"
+		attributeName="cy"
+		from="215" to="57"
+		dur="1s"
+		begin="x11.end-0.1s"
+		id="x12"
+		fill="freeze"/>
+<animate xlink:href="#violet-ball"
+		attributeName="cx"
+		from="172" to="82"
+		dur="1s"
+		 begin="x11.end-0.1s"
+		 id="x12"
+		fill="freeze"/>
+<animate xlink:href="#violet-ball"
+		attributeName="opacity"
+		values="1;0"
+		dur="0.1s"
+		begin="x12.end-0.2s"
+		fill="freeze"
+		id="x13"/>
+							  
+
+		
+		
+		
+
+
+		
+	</svg>
+</body>
+</html>
